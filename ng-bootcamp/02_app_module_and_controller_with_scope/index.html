@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Training</title>
+  <script src="../vendor/angular/angular.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="AppCtrl">
+
+
+
+<label >First:
+  <input type="text" ng-model="firstName">
+</label>
+<label>Last:
+  <input type="text" ng-model="lastName">
+</label>
+
+<div >
+  {{ message }}
+</div>
+
+<div>
+  <h1>
+    My name is <strong>{{firstName || '_______'}}</strong> {{lastName || '_______'}}
+  </h1>
+</div>
+
+</body>
+</html>
