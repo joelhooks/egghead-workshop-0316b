@@ -1,12 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
   <meta charset="UTF-8">
   <title>Angular Training</title>
+  <script src="../vendor/angular/angular.js"></script>
 </head>
 <body>
 
-<h1>Angular App Goes Here</h1>
+<label >First:
+  <input type="text" ng-model="firstName">
+</label>
+<label>Last:
+  <input type="text" ng-model="lastName">
+</label>
+
+<div>
+  <h1>
+    My name is <strong>{{firstName || '_______'}}</strong> {{lastName || '_______'}}
+  </h1>
+</div>
 
 </body>
 </html>
