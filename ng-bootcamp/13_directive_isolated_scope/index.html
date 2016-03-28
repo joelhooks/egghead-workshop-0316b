@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="example" >
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Training</title>
+  <link rel="stylesheet" href="../vendor/bootstrap-css/css/bootstrap.css">
+  <script src="../vendor/angular/angular.js"></script>
+  <script src="app.js"></script>
+</head>
+<body giveme ng-controller="AppCtrl as app">
+
+<h1>{{app.theMovie}}</h1>
+
+<movie-banner greet="app.sayHello(to)" movie="app.theMovie"></movie-banner>
+
+<name-headline name="Joel"></name-headline>
+<name-headline name="henry"></name-headline>
+<name-headline name="{{app.someName}}"></name-headline>
+
+</div>
+</body>
+</html>

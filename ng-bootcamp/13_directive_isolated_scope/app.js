@@ -1,13 +1,51 @@
 angular.module('example', [])
   .controller('AppCtrl', function AppCtrl() {
     var app = this;
+    app.someName = 'Geronimo';
+
+    app.theMovie = {
+      title: 'Star Wars',
+      actor: 'Robert Redford'
+    };
+
+    app.sayHello = function(to) {
+      console.log('Hello ' + to);
+    }
+  })
+  .directive('movieBanner', function() {
+    return {
+      restrict: 'E',
+      scope: {
+        movie: '=',
+        greet: '&'
+      },
+      template: '<h1 ng-click="greet({to: movie.actor})">I like {{movie.actor}} in {{movie.title}}.</h1>',
+
+      link: function(scope, elem, attrs) {
+        scope.movie = {
+          title: 'Indiana Jones and the Kingdom of the Crystal Skull',
+          actor: 'Matt Damon'
+        }
+      }
+
+    }
+  })
+
+  .directive('nameHeadline', function() {
+    return {
+      restrict: 'E',
+      scope: {
+        name: '@'
+      },
+      template: '<h1>The name is: {{name}}</h1>'
+    }
   })
 
   .directive('beCareful', function() {
     return {
       restrict: 'E',
       scope: {},
-      templateUrl: 'be-careful.tpl.html',
+      template: '<h1>Changes leak. {{notIsolated}}</h1>',
       link: function(scope, elem, attrs) {
         elem.on('mouseover', function() {
           scope.notIsolated = Math.random();
