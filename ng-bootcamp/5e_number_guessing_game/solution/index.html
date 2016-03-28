@@ -21,7 +21,7 @@
   </section>
   <hr>
   <section>
-    <h3 ng-if="game.currentGuess">You guessed <strong>{{game.currentGuess}}</strong>.</h3>
+    <h3 ng-if="game.currentGuess">You guessed <code>{{game.currentGuess}}</code>.</h3>
     <div ng-if="game.delta < 0" class="alert alert-danger">Your guess is too small!</div>
     <div ng-if="game.delta > 0" class="alert alert-danger">Your guess is too big!</div>
     <div ng-if="game.delta === 0" class="alert alert-success">Your guess is correct!</div>

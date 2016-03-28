@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="example">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Training</title>
+  <link rel="stylesheet" href="../vendor/bootstrap-css/css/bootstrap.css">
+  <script src="../vendor/angular/angular.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="AppCtrl as app">
+
+<div ng-repeat="num in app.numbers track by $index">
+  {{num}}
+</div>
+
+<ul>
+  <li ng-repeat="person in app.people">
+    {{$index}}. {{person.firstName}} {{person.lastName}}
+  </li>
+</ul>
+
+<div ng-repeat="person in app.people">
+  {{person.firstName}} {{person.lastName}}
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="person in app.people">
+      <td>{{person.firstName}}</td>
+      <td>{{person.lastName}}</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
