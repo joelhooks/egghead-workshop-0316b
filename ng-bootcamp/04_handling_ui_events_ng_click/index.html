@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" ng-app="example">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Training</title>
+  <script src="../vendor/angular/angular.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="AppCtrl as app">
+
+<h1 ng-mouseover="app.sayHello()">{{app.message}}</h1>
+
+<input type="text" ng-model="app.userInput">
+<button ng-click="app.updateMessage(app.userInput)">Submit</button>
+
+</body>
+</html>
