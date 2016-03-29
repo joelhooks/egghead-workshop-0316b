@@ -3,7 +3,6 @@ angular.module('example', [])
     var app = this;
   })
 
-
   .component('tabs', {
     transclude: true,
     controller: function() {
