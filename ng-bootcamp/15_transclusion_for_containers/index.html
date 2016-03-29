@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="example" >
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Training</title>
+  <link rel="stylesheet" href="../vendor/bootstrap-css/css/bootstrap.css">
+  <script src="../vendor/angular/angular.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="AppCtrl as app">
+
+<donut ng-repeat="donut in app.donuts" ingredients="donut">
+  <ul>
+    <li ng-repeat="topping in donut.toppings">{{topping}}</li>
+  </ul>
+</donut>
+
+</body>
+</html>
