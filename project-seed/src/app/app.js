@@ -5,11 +5,5 @@ angular.module('project-seed', [
   'templates-app',
   'ps.user-list'
 ])
-  .controller('AppCtrl', function AppCtrl($http) {
-    var app = this;
 
-    $http.get('https://api.github.com/users').then(function(result) {
-      app.users = result.data;
-    })
-  })
 ;

@@ -8,19 +8,10 @@
   <!-- endinject -->
 
 </head>
-<body ng-controller="AppCtrl as app">
+<body>
 
 <div class="container">
   <div ui-view></div>
-
-
-  <h2>User List</h2>
-  <ul class="list-unstyled">
-    <li ng-repeat="user in app.users">
-      <img ng-src="{{user.avatar_url}}" class="avatar">
-      {{::user.login}}
-    </li>
-  </ul>
 </div>
 
 <!-- inject:js -->

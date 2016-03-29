@@ -1,4 +1,6 @@
-angular.module('ps.user-list', [])
+angular.module('ps.user-list', [
+  'ui.router'
+])
   .config(function($stateProvider) {
     $stateProvider
       .state('userList', {
@@ -7,8 +9,10 @@ angular.module('ps.user-list', [])
         controller: 'UserListCtrl as userList'
       })
   })
-  .controller('UserListCtrl', function UserListCtrl() {
+  .controller('UserListCtrl', function UserListCtrl($http) {
     var userList = this;
-    console.log('user list controller')
+    $http.get('https://api.github.com/users').then(function (result) {
+      userList.users = result.data;
+    })
   })
 ;
