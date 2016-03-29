@@ -1,7 +1,9 @@
 angular.module('project-seed', [
   'project-seed.common',
   'ngAria',
-  'ui.router'
+  'ui.router',
+  'templates-app',
+  'ps.user-list'
 ])
   .controller('AppCtrl', function AppCtrl($http) {
     var app = this;
