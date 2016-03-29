@@ -3,5 +3,11 @@ angular.module('project-seed', [
   'ngAria',
   'ui.router'
 ])
+  .controller('AppCtrl', function AppCtrl($http) {
+    var app = this;
 
+    $http.get('https://api.github.com/users').then(function(result) {
+      app.users = result.data;
+    })
+  })
 ;
