@@ -1,7 +1,8 @@
 angular.module('ps.user-detail', [
   'ui.router',
   'ps.user-detail.repos',
-  'ps.user-detail.events'
+  'ps.user-detail.events',
+  'ps.user-detail.comment'
 ])
   .config(function($stateProvider) {
     $stateProvider
@@ -15,12 +16,11 @@ angular.module('ps.user-detail', [
   .controller('UserDetailCtrl', function UserDetailCtrl($stateParams, userService, $state, $uibModal) {
     var userDetail = this;
 
-    $uibModal.open({
-      template: '<h1>Hi modal!</h1>',
-      controller: function() {
-        console.log('in the modal!!!');
-      }
-    });
+    userDetail.openAddComment = function() {
+      $state.go('userDetail.comment');
+    };
+
+
 
     userDetail.viewUserList = function() {
       $state.go('userList'); //params as second arg!
