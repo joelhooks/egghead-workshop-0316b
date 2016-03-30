@@ -1,7 +1,9 @@
 <h2>User List</h2>
 <ul class="list-unstyled">
   <li ng-repeat="user in userList.users">
-    <img ng-src="{{user.avatar_url}}" class="avatar">
-    {{::user.login}}
+    <a ui-sref="userDetail({username: user.login})">
+      <img ng-src="{{user.avatar_url}}" class="avatar">
+      {{::user.login}}
+    </a>
   </li>
 </ul>

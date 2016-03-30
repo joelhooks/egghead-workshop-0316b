@@ -4,22 +4,14 @@ describe('userList', function() {
 
   beforeEach(module('ps.user-list'));
   beforeEach(inject(function($controller) {
-    userService = {
-      fetchUsersCalled: false,
-      fetchUsers: function () {
-        this.fetchUsersCalled = true;
-        return { then: function (callback) {
-          callback([]);
-        } }
-      }
-    };
+    setUserService();
 
     userList = $controller('UserListCtrl', {
       userService: userService
     });
   }));
 
-  it('should create a controller instance ', function() {
+  it('should create a controller instance', function() {
     expect(userList).toBeDefined();
   });
 
@@ -31,4 +23,17 @@ describe('userList', function() {
     expect(userList.users).toBeDefined();
   });
 
+  function setUserService() {
+    userService = {
+      fetchUsersCalled: false,
+      fetchUsers: function () {
+        this.fetchUsersCalled = true;
+        return {
+          then: function (callback) {
+            callback([]);
+          }
+        }
+      }
+    };
+  }
 });
