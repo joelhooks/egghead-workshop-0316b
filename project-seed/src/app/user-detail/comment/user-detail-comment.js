@@ -18,7 +18,7 @@ angular.module('ps.user-detail.comment', [
     var userDetailComment = this;
 
     $uibModalInstance.result.then(function (result) {
-      console.log('result', result)
+      console.log('result' + $state.params.username, result)
     }, function (error) {
       console.log('error', error)
     }).finally(function () {
