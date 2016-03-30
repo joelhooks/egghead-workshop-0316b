@@ -1,6 +1,7 @@
 angular.module('ps.user-detail', [
   'ui.router',
-  'ps.user-detail.repos'
+  'ps.user-detail.repos',
+  'ps.user-detail.events'
 ])
   .config(function($stateProvider) {
     $stateProvider

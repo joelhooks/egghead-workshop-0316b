@@ -4,6 +4,12 @@ angular.module('ps.services.user-service', [])
     var userService = this;
 
     
+    userService.fetchUserEvents = function(username) {
+      return $http.get(baseApiUrl + '/users/' + username + '/events').then(function (result) {
+        return result.data;
+      })   
+    };
+    
     userService.fetchUserRepos = function(username) {
       return $http.get(baseApiUrl + '/users/' + username + '/repos').then(function (result) {
         return result.data;

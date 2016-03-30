@@ -16,7 +16,7 @@ var gulp = require('gulp'),
     pkg = require('./package.json'),
     babel = require('gulp-babel'),
     plumber = require('gulp-plumber'),
-    sourcemaps = require('gulp-sourcemaps');;
+    sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('build', function(callback) {
   runSequence('clean',
@@ -167,7 +167,6 @@ gulp.task('serve', function () {
 gulp.task('compile', function(callback) {
   runSequence('build',
     'clean-bin',
-    'config-compile',
     'concat',
     'ngmin',
     'uglify',
