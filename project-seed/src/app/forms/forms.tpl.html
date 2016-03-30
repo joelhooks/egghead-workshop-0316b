@@ -1,0 +1,21 @@
+<form ng-submit="forms.submit(myForm.$valid)" name="myForm" class="form">
+ <div class="field">
+   <label>email:
+    <input has-name-validator="joel" type="email" minlength="5" name="myEmail" ng-model="forms.data.myEmail" class="input">
+   </label>
+   <label>username:
+     <input has-name-validator="joel" name-validator name="myName" type="text" ng-model="forms.data.myName">
+   </label>
+
+
+
+ </div>
+
+  <div ng-if="myForm.$submitted || myForm.myEmail.$touched" ng-messages="myForm.$error">
+    <div ng-message="required">You need to enter an email!</div>
+    <div ng-message="minlength">You need to enter at least 5 characters!</div>
+    <div ng-message="hasName">You need to use the required name.</div>
+  </div>
+
+  <button type="submit" >Submit</button>
+</form>
