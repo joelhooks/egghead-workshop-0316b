@@ -1,0 +1,31 @@
+<a ui-sref="userList">View All Users (ui-sref)</a>
+<a ng-click="userDetail.viewUserList()">View All Users ($state)</a>
+<div class="row">
+  <div class="col-md-3">
+    <h1>{{userDetail.user.login}}</h1>
+    <img ng-src="{{userDetail.user.avatar_url}}" class="avatar">
+    <br>
+    <br>
+    <ul class="list-unstyled">
+      <li>Name: {{userDetail.user.name}}</li>
+      <li>Company: {{userDetail.user.company}}</li>
+      <li>Email: {{userDetail.user.email}}</li>
+      <li>Repositories: {{userDetail.user.public_repos}}</li>
+      <li>Followers: {{userDetail.user.followers}}</li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <ul class="list-unstyled list-inline">
+      <li><a ui-sref="userDetail">Summary</a></li>
+      <li><a ui-sref="userDetail.repos">Repositories</a></li>
+      <li>Activity Stream</li>
+    </ul>
+    <div ui-view>
+      <h1>Summary of user activity.</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+</div>
