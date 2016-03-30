@@ -12,10 +12,15 @@ angular.module('ps.user-detail', [
       })
   })
 
-  .controller('UserDetailCtrl', function UserDetailCtrl($stateParams, userService, $state) {
+  .controller('UserDetailCtrl', function UserDetailCtrl($stateParams, userService, $state, $uibModal) {
     var userDetail = this;
 
-    console.log('USER DETAIL')
+    $uibModal.open({
+      template: '<h1>Hi modal!</h1>',
+      controller: function() {
+        console.log('in the modal!!!');
+      }
+    });
 
     userDetail.viewUserList = function() {
       $state.go('userList'); //params as second arg!

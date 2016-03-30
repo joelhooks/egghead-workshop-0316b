@@ -5,6 +5,8 @@ require("angular-sanitize");
 require("angular-aria");
 require("angular-moment");
 
+require("angular-ui-bootstrap");
+
 window._ = require("lodash");
 window.moment = require("moment");
 
